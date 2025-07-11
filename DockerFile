@@ -1,0 +1,8 @@
+FROM openjdk:17-jdk-slim
+
+COPY target/Docker_app.jar /usr/app/
+
+EXPOSE 8080
+
+ENTRYPOINT ["java", "-jar", "/Docker_app.war"]
+
