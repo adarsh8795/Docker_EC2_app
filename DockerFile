@@ -1,8 +1,8 @@
-FROM openjdk:17-jdk-slim
+# Use Tomcat 10 with Java 17
+FROM tomcat:10.1-jdk17
 
-COPY target/Docker_app.jar /usr/app/
+# Copy WAR into Tomcat webapps folder
+COPY target/Docker_app-0.0.1-SNAPSHOT.war /usr/local/tomcat/webapps/ROOT.war
 
+# Expose default Tomcat port
 EXPOSE 8080
-
-ENTRYPOINT ["java", "-jar", "/Docker_app.war"]
-
